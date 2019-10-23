@@ -1,0 +1,51 @@
+{
+  "name": "unicargo-server",
+  "version": "0.0.0",
+  "description": "Unicargo server",
+  "repository": "https://github.com/goldylucks/adam-unicargo",
+  "author": "Adam Goldman <goldy@adamgoldman.me>",
+  "scripts": {
+    "clean": "rimraf lib",
+    "prebuild": "yarn clean",
+    "build": "babel src --out-dir lib",
+    "dev": "nodemon --exec yarn start",
+    "start": "babel-node src/index.js"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.7.5",
+    "morgan": "^1.9.1",
+    "pluralize": "^8.0.0",
+    "validator": "^11.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/node": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^23.4.2",
+    "jest": "^23.6.0",
+    "nodemon": "^1.19.4"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "testEnvironment": "node",
+    "setupTestFrameworkScriptFile": "<rootDir>/test-db-setup.js",
+    "testPathIgnorePatterns": [
+      "dist/"
+    ],
+    "restoreMocks": true
+  }
+}
